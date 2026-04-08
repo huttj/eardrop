@@ -1,0 +1,28 @@
+[project]
+name = "eardrop"
+version = "0.1.0"
+description = "Personal audio transcription, diarization, and summarization engine"
+requires-python = ">=3.11"
+
+dependencies = [
+    "mlx-whisper>=0.4.0",
+    "pyannote.audio>=3.1",
+    "torch>=2.1",
+    "torchaudio>=2.1",
+    "watchdog>=4.0",
+    "ollama>=0.4",
+    "pydub>=0.25",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.4",
+]
+
+[project.scripts]
+eardrop = "eardrop.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
